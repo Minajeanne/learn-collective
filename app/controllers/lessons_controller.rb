@@ -6,6 +6,7 @@ class LessonsController < ApplicationController
    end
 
    def show
+      @contribution = Contribution.new
    end
 
    private 
