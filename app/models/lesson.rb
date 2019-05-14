@@ -8,3 +8,4 @@ class Lesson < ApplicationRecord
       self.name.gsub("-", " ")
    end
 end
+ 
