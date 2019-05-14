@@ -2,17 +2,19 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: bebopvinh
+  password: password
 
 development:
   <<: *default
-  database: learn-collective_development
+  database: developmentdb
 
-test:
-  <<: *default
-  database: learn-collective_test
+# test:
+#   <<: *default
+#   database: learn-collective_test
 
-production:
-  <<: *default
-  database: learn-collective_production
-  username: learn-collective
-  password: <%= ENV['LEARN-COLLECTIVE_DATABASE_PASSWORD'] %>
+# production:
+#   <<: *default
+#   database: learn-collective_production
+#   username: learn-collective
+#   password: <%= ENV['LEARN-COLLECTIVE_DATABASE_PASSWORD'] %>
