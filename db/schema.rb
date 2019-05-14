@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2019_05_14_023149) do
   end
 
   create_table "lessons", force: :cascade do |t|
-    t.string "title"
+    t.string "name"
     t.string "section"
     t.string "category"
   end
