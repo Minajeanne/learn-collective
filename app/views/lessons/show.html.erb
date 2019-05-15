@@ -19,5 +19,6 @@
 <% @lesson.contributions.each do |c| %>
    <h4><%= c.user.email if !!c.user %></h4>
    <p><%= markdown(c.content) if !!c.content %></p>
+   <p><%= update_buttons(c) %></p>
    <hr>
 <% end %> 

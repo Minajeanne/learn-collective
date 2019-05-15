@@ -1,4 +1,6 @@
 class ContributionsController < ApplicationController
+   before_action :authenticate_user!
+
    def create
       binding.pry
       user_id = current_user.id

@@ -18,4 +18,11 @@ module ApplicationHelper
       markdown = Redcarpet::Markdown.new(renderer, extensions)
       markdown.render(text).html_safe unless text == nil
    end
+
+
+   def update_buttons(contribution)
+      if contribution.user == current_user
+         button_to "Edit", contribution_path(contribution)
+      end
+   end
 end
