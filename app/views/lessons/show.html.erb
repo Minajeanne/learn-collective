@@ -3,21 +3,14 @@
 
 <div class="contribution_form">
    <h3>Add Hints and Tips For This Lesson:</h3>
-   <%= form_for @contribution, url: lesson_contributions_path(@lesson) do |f| %>
-      <%= md_simple_editor do %>
-         <%= f.text_area :content, cols: 45, rows: 15 %>
-      <% end %>
-      <br>
-
-      <%= f.submit %>
-   <% end %>
+   <%= render partial: 'contributions/form', locals: {contribution: @contribution, url: lesson_contributions_path(@lesson)} %>
 </div>
 
 <br><br>
 
 <h3>Comments:</h3>
 <% @lesson.contributions.each do |c| %>
-   <h4><%= c.user.email if !!c.user %></h4>
+   <p><%= c.user.email if !!c.user %></p>
    <p><%= markdown(c.content) if !!c.content %></p>
    <p><%= update_buttons(c) %></p>
    <hr>

@@ -22,7 +22,7 @@ module ApplicationHelper
 
    def update_buttons(contribution)
       if contribution.user == current_user
-         button_to "Edit", contribution_path(contribution)
+         button_to "Edit", edit_contribution_path(contribution), method: :get
       end
    end
 
