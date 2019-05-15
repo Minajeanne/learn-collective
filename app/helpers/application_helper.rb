@@ -25,4 +25,12 @@ module ApplicationHelper
          button_to "Edit", contribution_path(contribution)
       end
    end
+
+   def auth_buttons
+      if user_signed_in?
+         button_to "Sign Out", destroy_user_session_path, method: :delete
+      else
+         button_to "Sign In", new_user_session_path, method: :get
+      end
+   end
 end
