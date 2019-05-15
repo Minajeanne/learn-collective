@@ -4,5 +4,8 @@ Rails.application.routes.draw do
   end
   
   resources :contributions, only: [:edit, :update, :destroy]
-  devise_for :users
+  devise_for :users, controllers: {registrations: "registrations", omniauth_callbacks: "callbacks"}
+
+  root to:"application#home"
+
 end
