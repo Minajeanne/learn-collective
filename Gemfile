@@ -18,7 +18,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 ###### Markdown ######
 gem 'redcarpet'
-gem 'md_simple_editor'
+gem 'font-awesome-rails'
+gem 'trix-rails', require: 'trix'
 
 ###### AUTHENTICATION #######
 gem 'bcrypt', '~> 3.1.7'
