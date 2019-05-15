@@ -23,6 +23,8 @@ gem 'md_simple_editor'
 ###### AUTHENTICATION #######
 gem 'bcrypt', '~> 3.1.7'
 gem 'devise'
+gem 'omniauth'
+gem 'omniauth-github'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

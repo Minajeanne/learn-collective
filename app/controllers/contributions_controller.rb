@@ -5,9 +5,7 @@ class ContributionsController < ApplicationController
    def create
       lesson = Lesson.find_by(id: params[:lesson_id])
       @contribution = Contribution.new(user: current_user, lesson: lesson, content: contribution_params[:content])
-      # binding.pry
       if @contribution.save
-         binding.pry
          redirect_to lesson_path(lesson)
       else
          redirect_to lesson_path(lesson), alert: "Content was empty."
