@@ -1,3 +1,3 @@
 class Image < ApplicationRecord
-   include ImageUploader[:image_link]
+   include ImageUploader[:image]
 end

@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+<% binding.pry %>
+<%= image_tag @image.image_link  %>
+
+<p>
+  <strong>Image data:</strong>
+  <%= @image.image_data %>
+</p>
+
+<%= link_to 'Edit', edit_image_path(@image) %> |
+<%= link_to 'Back', images_path %>
