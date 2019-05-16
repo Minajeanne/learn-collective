@@ -3,7 +3,6 @@ class ContributionsController < ApplicationController
    before_action :find_contribution, only: [:edit, :update, :destroy]
 
    def create
-      binding.pry
       lesson = Lesson.find_by(id: params[:lesson_id])
       @contribution = Contribution.new(user: current_user, lesson: lesson, content: contribution_params[:content])
       if @contribution.save

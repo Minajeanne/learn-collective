@@ -11,7 +11,7 @@
 <h3>Comments:</h3>
 <% @lesson.contributions.each do |c| %>
    <p>From: <%= c.user.username if !!c.user %>:</p>
-   <p><%= markdown(c.content) if !!c.content %></p>
+   <div class="trix-content"><%= sanitize c.content %></div>
    <p><%= update_buttons(c) %></p>
    <hr>
 <% end %> 
