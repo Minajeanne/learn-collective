@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :photos
   resources :lessons, only: [:show, :index] do
     resources :contributions, only: [:create]
   end
