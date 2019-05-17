@@ -1,8 +1,8 @@
-<h1><%= @lesson.clean_name %></h1>
+<h1>Lesson: <%= @lesson.clean_name %></h1>
 
 
 <div class="contribution_form">
-   <h3>Add Hints and Tips For This Lesson:</h3>
+   <h3>Add Hints and Tips For This Lesson</h3>
    <%= render partial: 'contributions/form', locals: {contribution: @contribution, url: lesson_contributions_path(@lesson)} %>
 </div>
 
