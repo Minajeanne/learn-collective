@@ -9,7 +9,6 @@ class LessonsController < ApplicationController
    end
 
    def create
-      
       @lesson = Lesson.new(lesson_params) do |user|
          user.creator_id = current_user.id
       end

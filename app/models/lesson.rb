@@ -9,7 +9,7 @@ class Lesson < ApplicationRecord
    end
 
    def creator_is?(user)
-      !!(self.creator_id == user.id)
+      !!(self.creator_id == user.id) unless user.nil?
    end 
 end
  

@@ -1,5 +1,6 @@
 <h1>Lesson: <%= @lesson.clean_name %></h1>
 
+
 <%= link_to "Edit this Lesson", edit_lesson_path(@lesson) if @lesson.creator_is?(current_user) %>
 
 
