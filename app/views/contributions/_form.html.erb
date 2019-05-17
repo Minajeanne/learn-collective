@@ -1,8 +1,15 @@
- <%= form_for contribution, url: url do |f| %>
-   
-   <%= f.trix_editor :content, required: true, autofocus: true %>
+ <% if user_signed_in? %>
+  <%= form_for contribution, url: url do |f| %>
+    
+    <%= f.trix_editor :content, required: true, autofocus: true %>
 
-   <br>
+    <br>
 
-   <%= f.submit %>
+    <%= f.submit %>
+  
+  <% end %>
+<% else %>
+    <h4>Please Sign In To Contribute.</h4>
 <% end %>
+
+<hr>
