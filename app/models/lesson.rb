@@ -7,5 +7,9 @@ class Lesson < ApplicationRecord
    def clean_name
       self.name.gsub("-", " ")
    end
+
+   def creator_is?(user)
+      !!(self.creator_id == user.id)
+   end 
 end
  

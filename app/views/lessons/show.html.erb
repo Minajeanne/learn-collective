@@ -1,6 +1,7 @@
 <h1>Lesson: <%= @lesson.clean_name %></h1>
 
-<%= link_to "Edit this Lesson", edit_lesson_path(@lesson) if current_user_is_creator?(@lesson) %>
+<%= link_to "Edit this Lesson", edit_lesson_path(@lesson) if @lesson.creator_is?(current_user) %>
+
 
 <div class="contribution_form">
    <h3>Add Hints and Tips For This Lesson</h3>

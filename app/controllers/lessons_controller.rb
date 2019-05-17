@@ -1,6 +1,8 @@
 class LessonsController < ApplicationController
+   include LessonsHelper
    before_action :find_lesson, only: [:show, :edit, :update, :destroy]
    before_action :authenticate_user!, except: [:index, :show]
+   before_action :check_creator, only: [:edit, :update, :destroy]
 
    def new
       @lesson = Lesson.new
@@ -29,17 +31,22 @@ class LessonsController < ApplicationController
    end
 
    def edit
-      if current_user_is_creator?
-         render :edit
-      else
-         redirect_to lesons_path, alert: "You are not permitted to modify this lesson."
-      end
+
    end
 
    def update
+      if @lesson.update(lesson_params)
+         redirect_to lesson_path(@lesson)
+      else
+         render :edit
+      end
    end
 
    def destroy
+      contributions = Contribution.where(lesson_id: @lesson.id)
+      contributions.destroy_all
+      @lesson.destroy
+      redirect_to lessons_path, notice: "Lesson deleted"
    end
 
    private 
@@ -51,5 +58,12 @@ class LessonsController < ApplicationController
          params.require(:lesson).permit(:name, :category, :section)
       end
 
+      def check_creator
+         if @lesson.creator_is?(current_user)
+            return
+         else
+            redirect_to lessons_path, alert: "You are not permitted to modify this #{@lesson.name}."
+         end
+      end
 end
 
