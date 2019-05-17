@@ -1,8 +1,15 @@
- <%= form_for contribution, url: url do |f| %>
-      <%= md_simple_editor do %>
-         <%= f.text_area :content, cols: 45, rows: 15 %>
-      <% end %>
-      <br>
+ <% if user_signed_in? %>
+  <%= form_for contribution, url: url do |f| %>
+    
+    <%= f.trix_editor :content, required: true, autofocus: true %>
 
-      <%= f.submit %>
-   <% end %>
+    <br>
+
+    <%= f.submit %>
+  
+  <% end %>
+<% else %>
+    <h4>Please Sign In To Contribute.</h4>
+<% end %>
+
+<hr>
