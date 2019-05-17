@@ -7,9 +7,13 @@ class LessonsController < ApplicationController
    end
 
    def create
-      binding.pry
-      @lesson = Lesson.new(lesson_params)
+      
+      @lesson = Lesson.new(lesson_params) do |user|
+         user.creator_id = current_user.id
+      end
+
       if @lesson.save
+         binding.pry
          redirect_to lesson_path(@lesson), notice: "Lesson create!"
       else
          render :new
@@ -25,7 +29,11 @@ class LessonsController < ApplicationController
    end
 
    def edit
-
+      if current_user_is_creator?
+         render :edit
+      else
+         redirect_to lesons_path, alert: "You are not permitted to modify this lesson."
+      end
    end
 
    def update
@@ -42,5 +50,6 @@ class LessonsController < ApplicationController
       def lesson_params
          params.require(:lesson).permit(:name, :category, :section)
       end
+
 end
 
