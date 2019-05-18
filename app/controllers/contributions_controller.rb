@@ -1,6 +1,7 @@
 class ContributionsController < ApplicationController
    before_action :authenticate_user!
-   before_action :find_contribution, only: [:edit, :update, :destroy]
+   before_action :find_contribution, :check_contributor, only: [:edit, :update, :destroy]
+   # before_action :check_contributor, only: [:edit, :update, :destroy]
 
    def create
       lesson = Lesson.find_by(id: params[:lesson_id])
@@ -36,5 +37,11 @@ class ContributionsController < ApplicationController
 
       def find_contribution
          @contribution = Contribution.find_by(id: params[:id])
+      end
+
+      def check_contributor
+         if @contribution.user != current_user
+            redirect_to lesson_path(@contribution.lesson), alert: "You are not permitted to modify that contribution."
+         end
       end
 end
