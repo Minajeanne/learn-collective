@@ -5,7 +5,7 @@ class Lesson < ApplicationRecord
    validates_presence_of :name, :creator_id
 
    def clean_name
-      self.name.gsub("-", " ")
+      name.gsub("-", " ")
    end
 
    def creator_is?(user)
