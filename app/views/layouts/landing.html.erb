@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>LearnCollective</title>
+
+   <%= stylesheet_link_tag    'landing', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+</head>
+<body>
+   <video playsinline autoplay muted loop id="bgvid">
+      <source src="code_landing.mp4" type="video/mp4">
+   </video>
+
+   <header class="viewport-header">
+   <h1>
+      Learn Collective <br>
+      <span>FOR FLATIRON STUDENTS</span>
+   </h1>
+   </header>
+
+   <main>
+      <%= yield %>
+   </main>
+
+</body>
+</html>
