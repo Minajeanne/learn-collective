@@ -23,19 +23,8 @@
           <h1 class="brand-title">Learn-Collective</h1>
           <h2 class="brand-tagline">Lessons Tips and Hints for Flatiron Students</h2>
 
-          <nav class="nav">
-            <ul class="nav-list">
-              <li class="nav-item">
-                <%= link_to "Sign Up", new_user_registration_path, class: "pure-button" if !user_signed_in? %>
-              </li>
-              <li class="nav-item">
-                <%= auth_buttons %>
-              </li>
-              <li class="nav-item">
-                <%= link_to "All Lessons", lessons_path, class: "pure-button" %>
-              </li>
-            </ul>
-          </nav>
+        <%= render 'layouts/nav' %>
+
         </div>
         </div>
 
