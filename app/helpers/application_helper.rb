@@ -22,15 +22,15 @@ module ApplicationHelper
 
    def update_buttons(contribution)
       if contribution.user == current_user
-         button_to "Edit", edit_contribution_path(contribution), method: :get
+         button_to "Edit Contribution", edit_contribution_path(contribution), method: :get, class: "pure-button pure-button-primary button-small"
       end
    end
 
    def auth_buttons
       if user_signed_in?
-         button_to "Sign Out", destroy_user_session_path, method: :delete
+         link_to "Sign Out", destroy_user_session_path, method: :delete, class: "pure-button"
       else
-         button_to "Sign In", new_user_session_path, method: :get
+         link_to "Sign In", new_user_session_path, method: :get, class: "pure-button"
       end
    end
 end

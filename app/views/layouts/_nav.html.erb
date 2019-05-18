@@ -1,0 +1,13 @@
+<nav class="nav">
+   <ul class="nav-list">
+      <li class="nav-item">
+         <%= link_to "Sign Up", new_user_registration_path, class: "pure-button" if !user_signed_in? %>
+      </li>
+      <li class="nav-item">
+         <%= auth_buttons %>
+      </li>
+      <li class="nav-item">
+         <%= link_to "All Lessons", lessons_path, class: "pure-button" %>
+      </li>
+   </ul>
+</nav>
