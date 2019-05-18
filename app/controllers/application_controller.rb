@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-   layout "landing"
+   layout "landing", only: :home
    def home
    end
 end
