@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  resources :photos
+  # resources :photos for future implementation of photo uploads
+
   resources :lessons do
     resources :contributions, only: [:create]
   end
