@@ -3,7 +3,7 @@ module LessonsHelper
       if !!content.user
          content.user.username
       else
-         "Unkown Source"
+         "Unknown Source"
       end
    end
 end
