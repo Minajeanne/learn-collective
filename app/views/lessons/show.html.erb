@@ -6,7 +6,9 @@
 
 <div class="contribution_form">
    <h4 class="content-subhead">Add Hints and Tips For This Lesson</h4>
+   <header id="myHeader" class="sticky">
    <%= render partial: 'contributions/form', locals: {contribution: @contribution, url: lesson_contributions_path(@lesson)} %>
+   </header>
 </div>
 
 <br><br>
