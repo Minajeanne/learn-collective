@@ -1,6 +1,6 @@
 <h1>All Lessons</h1>
 <% if user_signed_in?  %>
-   <%= link_to "Add a lesson", new_lesson_path %>
+   <%= link_to "Add a lesson", new_lesson_path, class: "pure-button button-success" %>
    <br><br>
 <% end %>
 <% @lessons.each do |l| %>

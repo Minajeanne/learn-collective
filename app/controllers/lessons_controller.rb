@@ -22,7 +22,7 @@ class LessonsController < ApplicationController
    end
 
    def index
-      @lessons = Lesson.all
+      @lessons = Lesson.all.reverse
    end
 
    def show
