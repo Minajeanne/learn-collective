@@ -6,16 +6,21 @@
    </ul>
    <br><br>
 
+   <% if user_signed_in? %>
    <ul class="nav-list">
       <li class="nav-item">
-         <%= link_to '<i class="fas fa-user-circle"></i> My Account'.html_safe, user_path(current_user), class: "pure-button" if user_signed_in? %>
+         <%= link_to '<i class="fas fa-user-circle"></i> My Account'.html_safe, user_path(current_user), class: "pure-button" %>
       </li>
    </ul>
-
+   <% else %>
    <ul class="nav-list">
       <li class="nav-item">
-         <%= link_to '<i class="fas fa-user-plus"></i> Sign Up'.html_safe, new_user_registration_path, class: "pure-button" unless !!user_signed_in? %>
+         <%= link_to '<i class="fas fa-user-plus"></i> Sign Up'.html_safe, new_user_registration_path, class: "pure-button" %>
       </li>
+   </ul>
+   <% end %>
+
+   <ul class="nav-list">
       <li class="nav-item">
          <%= auth_buttons %>
       </li>
