@@ -1,5 +1,8 @@
 <h1>All Lessons</h1>
-
+<% if user_signed_in?  %>
+   <%= link_to "Add a lesson", new_lesson_path %>
+   <br><br>
+<% end %>
 <% @lessons.each do |l| %>
    <li><%= link_to l.clean_name, lesson_path(l) %></li>
 <% end %>

@@ -1,0 +1,6 @@
+<h1>Edit the Lesson</h1>
+
+
+<%= render partial:'form', locals: {lesson: @lesson} %>
+
+<%= button_to "Delete Lesson", lesson_path(@lesson), method: :delete %>

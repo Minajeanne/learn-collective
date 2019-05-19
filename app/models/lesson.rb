@@ -2,10 +2,14 @@ class Lesson < ApplicationRecord
    has_many :contributions
    has_many :users, through: :contributions
 
-   validates :name, presence: true
+   validates_presence_of :name, :creator_id
 
    def clean_name
-      self.name.gsub("-", " ")
+      name.gsub("-", " ")
    end
+
+   def creator_is?(user)
+      !!(self.creator_id == user.id) unless user.nil?
+   end 
 end
  

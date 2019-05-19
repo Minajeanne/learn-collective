@@ -1,17 +1,24 @@
-<h1>Lesson: <%= @lesson.clean_name %></h1>
+<h1 class="post-title">Lesson: <%= @lesson.clean_name %></h1>
+
+
+<%= link_to "Edit this Lesson", edit_lesson_path(@lesson), class: "pure-button button-warning" if @lesson.creator_is?(current_user) %>
 
 
 <div class="contribution_form">
-   <h3>Add Hints and Tips For This Lesson</h3>
+   <h4 class="content-subhead">Add Hints and Tips For This Lesson</h4>
    <%= render partial: 'contributions/form', locals: {contribution: @contribution, url: lesson_contributions_path(@lesson)} %>
 </div>
 
 <br><br>
 
-<h3>Comments:</h3>
+<h2 class="content-subhead">Comments:</h2>
 <% @lesson.contributions.each do |c| %>
-   <p>From: <%= c.user.username if !!c.user %>:</p>
-   <div class="trix-content"><%= sanitize c.content %></div>
-   <p><%= update_buttons(c) %></p>
-   <hr>
+   <section class="post">
+      <header class="post-header">
+         <h2 class="post-title">From <%= c.user.username if !!c.user %>:<h2>
+      </header>
+      <div class="post-description trix-content"><%= sanitize c.content %></div>
+      <p><%= update_buttons(c) %></p>
+      <hr>
+   </section>
 <% end %> 
