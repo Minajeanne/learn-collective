@@ -259,7 +259,9 @@ Devise.setup do |config|
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
-  config.omniauth :github, '3865209616850b2fc8e6', '6033f09d786b70cd803b618e72fcb942259695f6', scope: 'user,public_repo'
+  github_client_id = Rails.application.credentials.dig(:github, :client_id)
+  github_client_secret = Rails.application.credentials.dig(:github, :client_secret)
+  config.omniauth :github, github_client_id, github_client_secret, scope: 'user,public_repo'
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
@@ -267,11 +269,11 @@ Devise.setup do |config|
   #
   # config.warden do |manager|
   #   manager.intercept_401 = false
-  #   manager.default_strategies(scope: :user).unshift :some_external_strategy
+  #   manager.default_strategies(scope:mar).unshift :some_external_strategy
   # end
 
-  # ==> Mountable engine configurations
-  # When using Devise inside an engine, let's call it `MyEngine`, and this engine
+  # ==> Mountable engine configurationsma
+  # When using Devise inside an engine,mas call it `MyEngine`, and this engine
   # is mountable, there are some extra configurations to be taken into account.
   # The following options are available, assuming the engine is mounted as:
   #

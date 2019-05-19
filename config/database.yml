@@ -3,8 +3,7 @@ default: &default
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: bebopvinh
-  password: password
-
+  password: Rails.application.credentials.dig(:postgres, :password)
 development:
   <<: *default
   database: developmentdb
@@ -13,8 +12,6 @@ development:
 #   <<: *default
 #   database: learn-collective_test
 
-# production:
-#   <<: *default
-#   database: learn-collective_production
-#   username: learn-collective
-#   password: <%= ENV['LEARN-COLLECTIVE_DATABASE_PASSWORD'] %>
+production:
+  <<: *default
+  database: productiondb
