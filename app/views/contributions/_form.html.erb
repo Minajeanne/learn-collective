@@ -2,7 +2,7 @@
  <% if user_signed_in? %>
  
   <%= form_for contribution, url: url do |f| %> 
-    <%= f.trix_editor :content, required: true, autofocus: true, size:"50x50" %>
+    <%= f.trix_editor :content, required: true, autofocus: true, rows:"50", cols: "100" %>
     <br>
     <%= f.submit class: "pure-button button-success" %>
   <% end %>

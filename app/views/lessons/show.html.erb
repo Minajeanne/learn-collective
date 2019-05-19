@@ -4,11 +4,11 @@
 <%= link_to "Edit this Lesson", edit_lesson_path(@lesson), class: "pure-button button-warning" if @lesson.creator_is?(current_user) %>
 
 
-<header id="myHeader">
-   <h4 class="content-subhead">Add Hints and Tips For This Lesson</h4>
 
-   <%= render partial: 'contributions/form', locals: {contribution: @contribution, url: lesson_contributions_path(@lesson)} %>
-</header>
+   <h4 class="content-subhead">Add Hints and Tips For This Lesson</h4>
+   <section class="post">
+      <%= render partial: 'contributions/form', locals: {contribution: @contribution, url: lesson_contributions_path(@lesson)} %>
+   </section>
 
 
 <br><br>
@@ -17,10 +17,10 @@
 <% @lesson.contributions.each do |c| %>
    <section class="post">
       <header class="post-header">
-         <h2 class="post-title">From <%= c.user.username if !!c.user %>:<h2>
+         <h2 class="post-title">From <%= display_user(c)%><h2>
       </header>
       <div class="post-description trix-content"><%= sanitize c.content %></div>
       <p><%= update_buttons(c) %></p>
-      <hr>
+
    </section>
 <% end %> 
