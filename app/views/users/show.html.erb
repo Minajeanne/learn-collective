@@ -1,0 +1,13 @@
+<h1><%= @user.username %></h1>
+
+<%= link_to "Edit Account", edit_user_registration_path, class: "pure-button button-warning" %>
+
+<h3>My Contributions</h3>
+
+<% @contributions.each do |c| %>
+   <section class="post">
+      <h2 class="content-subhead">From Lesson: <%= c.lesson.name %></h2>
+            <div class="post-description trix-content"><%= sanitize c.content %></div>
+      <p><%= update_buttons(c) %></p>
+   </section>
+<% end %>
