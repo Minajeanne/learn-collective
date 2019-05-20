@@ -14,7 +14,6 @@ class LessonsController < ApplicationController
       end
 
       if @lesson.save
-         binding.pry
          redirect_to lesson_path(@lesson), notice: "Lesson created!"
       else
          render :new
