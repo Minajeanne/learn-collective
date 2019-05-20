@@ -1,24 +1,10 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is an app for Flatiron Students to share tips and hints on particular labs. Students can log in and create a post that includes the lesson's name then proceed to add contributions/comments to help other students who are working on the same lab. Other students can also contribute to an existing lesson.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+To Run
+Prerequisite: A local Postgresql server
+-clone down repository
+-run `rails db:migrate` and `rails db:seed`
+-run `rails server`
+-visit app via `localhost:3000` (default)
