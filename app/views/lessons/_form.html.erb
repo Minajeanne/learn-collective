@@ -1,7 +1,10 @@
 <%= form_for lesson, html: {class:"pure-form"} do |f| %>
    <%= f.label :name %>
-   <%= f.text_field :name %> <br><br>  
-
+   <%= f.text_field :name %> <br><br>
+   <span class="pure-form-message-inline">Be as accurate as possible with the name.</span> 
+   <br>
+   <br>
+   
    <%= f.label :category %>
    <%= f.text_field :category %> <br><br>
 
