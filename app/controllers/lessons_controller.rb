@@ -15,7 +15,7 @@ class LessonsController < ApplicationController
 
       if @lesson.save
          binding.pry
-         redirect_to lesson_path(@lesson), notice: "Lesson create!"
+         redirect_to lesson_path(@lesson), notice: "Lesson created!"
       else
          render :new
       end
@@ -26,6 +26,9 @@ class LessonsController < ApplicationController
    end
 
    def show
+      if @lesson.nil?
+         redirect_to lessons_path, alert: "Lesson not found"
+      end
       @contribution = Contribution.new
    end
 
