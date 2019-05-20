@@ -1,9 +1,0 @@
-{
-  "name": "learn-collective",
-  "private": true,
-  "dependencies": {
-    "g": "^2.0.1",
-    "npm": "^6.9.0",
-    "simplemde": "^1.11.2"
-  }
-}
