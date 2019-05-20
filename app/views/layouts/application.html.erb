@@ -34,10 +34,10 @@
 
       <div class="content pure-u-1 pure-u-md-3-4">
         <% if notice %>
-          <p class="alert alert-success"><%= notice %></p>
+          <p class="alert alert-success" style="color:green"><%= notice %></p>
         <% end %>
         <% if alert %>
-          <p class="alert alert-danger"><%= alert %></p>
+          <p class="alert alert-danger" style="color:red"><%= alert %></p>
         <% end %>
 
         <%= yield %>

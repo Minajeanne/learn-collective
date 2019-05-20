@@ -27,7 +27,7 @@ class LessonsController < ApplicationController
 
    def show
       if @lesson.nil?
-         redirect_to lessons_path, alert: "Lesson not found"
+         redirect_to lessons_path, alert: "Lesson not found."
       end
       @contribution = Contribution.new
    end
