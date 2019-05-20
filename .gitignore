@@ -28,4 +28,4 @@
 
 
 # .env for Omniauth Credentials
-*.env
+.env
